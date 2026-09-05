@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osman Kargbo | Computer Scientist</title>
+    <meta name="description" content="Osman Kargbo - Computer Scientist, Web Developer, Programmer, Graphic Designer and IT Trainer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --background: #050713;
+    --glass: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.14);
+    --text: #ffffff;
+    --muted: #a8b1c3;
+    --cyan: #55e6ff;
+    --purple: #9b7cff;
+    --green: #7dffc9;
+    --shadow: 0 25px 80px rgba(0, 0, 0, 0.40);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 180, 255, 0.18), transparent 30%),
+        radial-gradient(circle at 90% 10%, rgba(130, 70, 255, 0.20), transparent 30%),
+        radial-gradient(circle at 50% 100%, rgba(0, 255, 180, 0.10), transparent 35%),
+        var(--background);
+    min-height: 100vh; overflow-x: hidden;
+}
+body::before, body::after { content: ""; position: fixed; border-radius: 50%; filter: blur(120px); z-index: -1; }
+body::before { width: 400px; height: 400px; left: -200px; top: 20%; background: rgba(0, 217, 255, 0.12); }
+body::after { width: 450px; height: 450px; right: -200px; bottom: -100px; background: rgba(130, 70, 255, 0.15); }
+a { text-decoration: none; color: inherit; }
+.container { width: min(1150px, 92%); margin: auto; }
+.glass {
+    background: linear-gradient(135deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035));
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,0.08);
+    backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px);
+}
+
+/* NAV */
+header { position: fixed; top: 0; left: 0; width: 100%; z-index: 1000; padding: 18px 0; }
+.nav { height: 62px; padding: 0 20px; border-radius: 20px; display: flex; align-items: center; justify-content: space-between; }
+.logo { font-family: "Space Grotesk"; font-size: 24px; font-weight: 700; letter-spacing: -1px; }
+.logo span { color: var(--cyan); }
+.nav-links { display: flex; gap: 26px; list-style: none; }
+.nav-links a { color: #c5ccda; font-size: 13px; font-weight: 600; transition: 0.3s; }
+.nav-links a:hover { color: var(--cyan); }
+.menu-btn { display: none; font-size: 25px; cursor: pointer; }
+
+/* HERO */
+.hero { min-height: 100vh; display: flex; align-items: center; padding: 130px 0 70px; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+.badge { display: inline-flex; align-items: center; gap: 10px; padding: 9px 15px; border-radius: 30px; color: #bcefff; font-size: 12px; font-weight: 700; }
+.online-dot { width: 8px; height: 8px; background: var(--green); border-radius: 50%; box-shadow: 0 0 15px var(--green); }
+.hero h1 { font-family: "Space Grotesk"; font-size: clamp(48px, 7vw, 82px); line-height: 0.98; letter-spacing: -4px; margin: 25px 0; }
+.gradient-text { background: linear-gradient(90deg, #ffffff, var(--cyan), var(--purple)); -webkit-background-clip: text; color: transparent; }
+.hero-description { max-width: 650px; color: var(--muted); font-size: 17px; line-height: 1.8; }
+.buttons { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
+.btn { display: inline-block; padding: 14px 21px; border-radius: 13px; font-size: 13px; font-weight: 700; transition: 0.3s; }
+.btn:hover { transform: translateY(-4px); }
+.primary-btn { color: #061019; background: linear-gradient(135deg, var(--cyan), #777cff); box-shadow: 0 10px 30px rgba(0,217,255,0.18); }
+.secondary-btn { border: 1px solid var(--border); background: rgba(255,255,255,0.04); }
+
+/* PROFILE */
+.profile-container { position: relative; }
+.profile-card { padding: 17px; border-radius: 32px; transform: rotate(1deg); }
+.profile-photo { height: 540px; overflow: hidden; border-radius: 25px; position: relative; }
+.profile-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.profile-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(2,5,15,0.85)); }
+.profile-info { position: absolute; bottom: 25px; left: 25px; z-index: 5; }
+.profile-info small { color: #aab5c9; }
+.profile-info h2 { font-family: "Space Grotesk"; font-size: 28px; margin-top: 3px; }
+.floating-card { position: absolute; padding: 14px 17px; border-radius: 17px; font-size: 11px; font-weight: 700; z-index: 10; }
+.float-one { left: -35px; top: 50px; color: #bdf4ff; }
+.float-two { right: -30px; bottom: 60px; color: #d2c6ff; }
+
+/* SECTIONS */
+section { padding: 100px 0; }
+.section-header { max-width: 700px; margin-bottom: 45px; }
+.section-header small { color: var(--cyan); font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; }
+.section-header h2 { font-family: "Space Grotesk"; font-size: 42px; line-height: 1.1; letter-spacing: -2px; margin: 10px 0; }
+.section-header p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 0.9fr; gap: 20px; }
+.about-card { padding: 30px; border-radius: 25px; }
+.about-card p { color: #aab3c5; font-size: 14px; line-height: 1.9; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+.stat { padding: 25px; border-radius: 20px; }
+.stat strong { display: block; color: var(--cyan); font-family: "Space Grotesk"; font-size: 31px; }
+.stat span { color: #8e98ac; font-size: 12px; }
+
+/* SERVICES */
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.service-card { padding: 28px; min-height: 205px; border-radius: 23px; transition: 0.35s; }
+.service-card:hover { transform: translateY(-8px); border-color: rgba(85,230,255,0.35); }
+.service-icon { font-size: 27px; margin-bottom: 18px; }
+.service-card h3 { font-family: "Space Grotesk"; font-size: 19px; margin-bottom: 9px; }
+.service-card p { color: #8f99ad; font-size: 13px; line-height: 1.7; }
+
+/* EXPERIENCE */
+.timeline { border-left: 1px solid var(--border); margin-left: 9px; }
+.timeline-item { position: relative; padding: 0 0 35px 30px; }
+.timeline-item::before { content: ""; position: absolute; left: -5px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 15px var(--cyan); }
+.timeline-year { color: var(--cyan); font-size: 11px; font-weight: 800; }
+.timeline-item h3 { font-family: "Space Grotesk"; font-size: 19px; margin: 5px 0; }
+.timeline-item p { color: #919bad; font-size: 13px; }
+
+/* CONTACT */
+.contact-box { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; padding: 45px; border-radius: 30px; }
+.contact-box h2 { font-family: "Space Grotesk"; font-size: 42px; line-height: 1.05; letter-spacing: -2px; margin: 10px 0 15px; }
+.contact-box p { color: var(--muted); font-size: 14px; line-height: 1.7; }
+
+/* FOOTER */
+footer { border-top: 1px solid var(--border); padding: 28px 0; text-align: center; color: #717b90; font-size: 11px; }
+
+/* ANIMATIONS */
+.reveal { opacity: 0; transform: translateY(25px); transition: 0.8s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* BACK TO TOP */
+#backTop { position: fixed; right: 22px; bottom: 22px; width: 45px; height: 45px; border-radius: 14px; display: grid; place-items: center; z-index: 100; opacity: 0; pointer-events: none; transition: 0.3s; }
+#backTop.show { opacity: 1; pointer-events: auto; }
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .hero-grid, .about-grid, .contact-box { grid-template-columns: 1fr; }
+    .hero { text-align: center; }
+    .profile-container { max-width: 560px; margin: auto; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; position: absolute; top: 75px; right: 4%; width: 220px; padding: 22px; border-radius: 20px; flex-direction: column; background: rgba(5,8,20,0.95); border: 1px solid var(--border); backdrop-filter: blur(20px); }
+    .nav-links.show { display: flex; }
+    .menu-btn { display: block; }
+}
+@media(max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 49px; letter-spacing: -2.5px; }
+    .profile-photo { height: 430px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="container">
+<nav class="nav glass">
+<a href="#home" class="logo">Osman<span>.</span></a>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<div class="menu-btn" id="menuBtn">☰</div>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div class="reveal">
+<div class="badge glass"><span class="online-dot"></span>Computer Science • Technology • Creativity</div>
+<h1>Building a <span class="gradient-text">Smarter Digital Future.</span></h1>
+<p class="hero-description">I'm <strong>Osman Kargbo</strong> — a Computer Science professional, IT trainer, and graphic designer passionate about technology, education and creative digital solutions.</p>
+<div class="buttons">
+<a href="#contact" class="btn primary-btn">Hire Me →</a>
+<a href="c:\Users\OSMAN\Desktop\David\osman-portfolio\OSMAN KARGBO CV.pdf" class="btn secondary-btn">Download CV ↓</a>
+</div>
+</div>
+
+<div class="profile-container reveal">
+<div class="floating-card glass float-one">✦ Digital Skills & Training</div>
+<div class="floating-card glass float-two">◈ Creative Technology</div>
+<div class="profile-card glass">
+<div class="profile-photo">
+<img src="c:\Users\OSMAN\Desktop\David\osman-portfolio\osman-kargbo.jpg.jpg" alt="Osman Kargbo">
+<div class="profile-info"><small>Professional Profile</small><h2>Osman Kargbo</h2></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<div class="section-header reveal"><small>About Me</small><h2>Technology, education and creativity.</h2></div>
+<div class="about-grid">
+<div class="about-card glass reveal">
+<p>I am <strong>Osman Kargbo</strong>, a dedicated IT professional from Freetown, Sierra Leone.</p>
+<p style="margin-top:15px">My professional experience includes tutoring, IT support, graphic design and computer training.</p>
+<p style="margin-top:15px">I enjoy mentoring, teaching, and helping businesses and students grow through technology.</p>
+</div>
+<div class="stats">
+<div class="stat glass reveal"><strong>5+</strong><span>Years Experience</span></div>
+<div class="stat glass reveal"><strong>100+</strong><span>Students Trained</span></div>
+<div class="stat glass reveal"><strong>50+</strong><span>Projects Completed</span></div>
+<div class="stat glass reveal"><strong>24/7</strong><span>Support Available</span></div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="container">
+<div class="section-header reveal"><small>Services</small><h2>What I Do</h2></div>
+<div class="services-grid">
+<div class="service-card glass reveal"><div class="service-icon">💻</div><h3>IT Support</h3><p>Computer troubleshooting, system setup, and technical support for businesses and schools.</p></div>
+<div class="service-card glass reveal"><div class="service-icon">📚</div><h3>Computer Training</h3><p>Practical training in digital literacy, MS Office, and programming for students and professionals.</p></div>
+<div class="service-card glass reveal"><div class="service-icon">🎨</div><h3>Graphic Design</h3><p>Logos, flyers, banners, stickers and branding materials for your business.</p></div>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="container">
+<div class="section-header reveal"><small>Experience</small><h2>Work History</h2></div>
+<div class="timeline">
+<div class="timeline-item reveal"><div class="timeline-year">Present</div><h3>IT LECTURER</h3><p>Malik Bin Anas College of West Africa - Teaching computer science and supporting IT labs.</p></div>
+<div class="timeline-item reveal"><div class="timeline-year">Present</div><h3>IT LECTURER</h3><p>One Deen Educational Institute - Delivered computer training and mentored students.</p></div>
+<div class="timeline-item reveal"><div class="timeline-year">Present</div><h3>Graphic Designer</h3><p>Luminous Technology - Branding, flyers, posters and digital graphics that enhance communication and improve audience engagement.</p></div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+
+<section id="contact">
+<div class="container">
+<div class="contact-box glass reveal">
+<div>
+<h2>Let's build something <span class="gradient-text">amazing</span> together</h2>
+<p>Need a website, design, printing, or IT training? I'm available for projects and training sessions.</p>
+</div>
+<div>
+<a href="https://wa.me/23232137124" class="btn primary-btn" style="display:block; text-align:center; margin-bottom:10px;">PV Me on WhatsApp</a>
+<a href="osmankargbo167@gmail.com" class="btn secondary-btn" style="display:block; text-align:center;">Email Me</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="container">© 2026 Osman Kargbo. All Rights Reserved.</div>
+</footer>
+
+<a href="#home" id="backTop" class="glass">↑</a>
+
+<script>
+// 1. Mobile Menu Toggle
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+});
+
+// 2. Scroll Reveal Animation
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('active');
+    });
+}, { threshold: 0.1 });
+reveals.forEach(r => observer.observe(r));
+
+// 3. Back to Top Button
+const backTop = document.getElementById('backTop');
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) backTop.classList.add('show');
+    else backTop.classList.remove('show');
+});
+</script>
+
+</body>
+</html>
